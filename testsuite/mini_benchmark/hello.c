@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+void bug(void) {
+  int* addr = (int *) 0xdeadbeef;
+  *addr = 1337;
+}
+
+
 int main(int argc, char** argv) {
   int r = 0;
   char *s = NULL;
@@ -16,7 +22,7 @@ int main(int argc, char** argv) {
 
   if (s[0] == 'h' && s[1] == 'e' && s[2] == 'l' &&
       s[3] == 'l' && s[4] == 'o') {
-    __builtin_trap();
+    bug();
   }
 
   return 0;

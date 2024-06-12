@@ -16,7 +16,7 @@ def main(mount_path="./workspace"):
 
     # compile and run with in this image
     os.system(" ".join(argv))
-    # symcc_fuzzing_helper -o o -a afl-slave
+    # symcc_fuzzing_helper -o o -a afl-slave -n symcc -- $(CMDLINE)
 
 if __name__ == '__main__':
     main()
